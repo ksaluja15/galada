@@ -4,7 +4,7 @@
       <div class="col col-12">
         <div class="footer-top">
           <h2 class="logo-title">
-            <a href="{{site.baseurl}}/" class="logo-text">Galada</a>
+            <a href="{{site.baseurl}}/" class="logo-text">Kunal Saluja</a>
           </h2>
           <div class="top"><i class="ion ion-ios-arrow-up"></i></div>
         </div>
@@ -14,21 +14,19 @@
           </div>
           <div class="footer-social">
             <ul class="list-reset">
-              {% if site.facebook %}
-              <li><a href="{{ site.facebook }}">Facebook</a></li>
+
+              {% if site.linkedin %}
+              <li><a href="{{ site.facebook }}">Linkedin</a></li>
+              {% else %} {% endif %}
+
+              {% if site.github %}
+              <li><a href="{{ site.facebook }}">Github</a></li>
               {% else %} {% endif %}
 
               {% if site.twitter %}
               <li><a href="{{ site.twitter }}">Twitter</a></li>
               {% else %} {% endif %}
 
-              {% if site.instagram %}
-              <li><a href="{{ site.instagram }}">Instagram</a></li>
-              {% else %} {% endif %}
-
-              {% if site.pinterest %}
-              <li><a href="{{ site.pinterest }}">Pinterest</a></li>
-              {% else %} {% endif %}
             </ul>
           </div>
         </div>
