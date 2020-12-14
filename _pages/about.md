@@ -4,8 +4,9 @@ title: About
 image: 13.jpeg
 permalink: /about/
 ---
-
-My name is Kunal Saluja. I'm a computer vision research engineer with experience in Object detection, segmentation, tracking, pose estimation and 3D reconstruction. I've previously developed deep learning based vision systems for Robotics, AR/VR & Ad-Tech applications.
+#### <center>KUNAL SALUJA</center>
+---
+I'm a computer vision research engineer with experience in object detection, segmentation, tracking, pose estimation and 3D reconstruction. I'm actively engaged in developing deep learning vision systems for Robotics, AR/VR & Ad-Tech applications.
 
 ---
 
@@ -48,7 +49,6 @@ My name is Kunal Saluja. I'm a computer vision research engineer with experience
 <b>Technical University of Munich</b> &nbsp; <small> 2013 </small>
 <br>
 <b>Bhabha Atomic Research Center</b> &nbsp; <small> 2012 </small>
-<br>
 
 
 ---
