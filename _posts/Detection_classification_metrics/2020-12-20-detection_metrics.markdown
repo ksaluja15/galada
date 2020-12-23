@@ -9,14 +9,16 @@ usemathjax: true
 
 # Problem Statement
 
- 1. Once we've trained multiple detection/classification models, how to choose the best model.
- 2. Once we've chosen the best model, how to choose the optimum operating point (the best threshold).
+ 1. Once we've trained multiple detection/classification models, how to choose the best model ?
+ 2. Once we've chosen the best model, how to choose the optimum operating point (the best threshold) ?
 
 # Solution
 
 There are two metrics which can help us here. If you've come across terms like AP, mAP and F-1 score in research papers, 
 these are precisely the metrics that help us with the above mentioned problems. Let's begin by defining precision and recall, 
 which are pre-requisities to understanding other metrics.
+
+### Precision and Recall
 
 Let's assume that we've trained a car detector.
 
@@ -104,3 +106,10 @@ This is also known as the Equal Error Rate (EER) point.
     plt.ylabel('F1 Score')
     plt.savefig('ft.png', dpi=1000)
 {% endhighlight %}
+
+
+## Quick Takeaways
+
+1. For choosing the best model from multiple variants (differing in architecture, 
+augmentation or training methodology), use mAP
+2. For choosing the best operating threshold, use F1 score.
