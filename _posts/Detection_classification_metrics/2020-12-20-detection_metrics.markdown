@@ -3,7 +3,7 @@ layout: post
 title:  Detection/Classification metrics
 date:   2020-12-13 16:03:00 +0300
 image:  06.jpg
-tags:   Blog
+tags:   Metrics F1 AP
 usemathjax: true
 ---
 
