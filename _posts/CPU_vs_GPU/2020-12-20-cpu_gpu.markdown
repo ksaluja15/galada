@@ -1,0 +1,75 @@
+---
+layout: post
+title:  CPU vs GPU vs TPU 
+date:   2020-12-24 16:03:00 +0300
+image:  06.jpg
+tags:   cpu gpu tpu latency throughput
+---
+
+# Introduction
+While most of the deep learning engineers/enthusiasts tend to focus on algorithms, 
+they often forget about the hardware they use for training/inference. If you were to
+ask them about why a GPU/TPU is faster than a cpu, you'll often hear responses like 
+"GPUs are optimized for convolutions or GPUs can run more threads". While these statements
+are true, they merely scratch the surface of what goes on underneath. In this post, I
+tried to dig in a little deeper into the hardware to explain what's exactly going on.
+I'm not a hardware pro by any means, but I feel this information is critical for all 
+AI enthusiasts.
+
+{% highlight markdown %}
+The main trade off b/w the three pieces of hardware is b/w Latency and
+Thoughput
+{% endhighlight %}
+
+## CPU
+
+![]({{site.baseurl}}/img/mult_add_cpu.gif)
+<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
+
+1. CPUs are meant to be the most flexible piece of hardware, capable of running every software, 
+instruction by instruction
+2. CPUs are not designed to only render graphics or multiply tensors, they need to load
+databases, a variety of applications and run multiple threads where each thread is running a different instruction set.
+3. To accomplish this, CPUs read instruction <i>one by one</i> from the memory, perform any 
+computation if needed, and write the result back into memory. 
+
+{% highlight markdown %}
+CPUs optimize for latency over throughput
+{% endhighlight %}
+
+## GPU
+![]({{site.baseurl}}/img/mult-add-gpu.gif)
+<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
+
+1. GPUs are designed to process a single instruction <i> simultaneously </i> over a large 
+number of cuda cores. 
+2. Though the cores have lower <a href='https://techterms.com/definition/clockspeed#:~:text=Clock%20speed%20is%20the%20rate,one%20billion%20cycles%20per%20second.'>
+clock speed </a>, the sheer number of cuda cores is enough to crush CPU when it comes to tasks 
+like training deep learning models
+
+{% highlight markdown %}
+GPU optimizes for throughput over latency by running a large number of ALUs in parallel.
+But they are still general enough and support most of computations possible on a CPU.
+{% endhighlight %}
+
+## TPU
+![]({{site.baseurl}}/img/mult_add_tpu.gif)
+<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
+
+1. TPUs pushes the envelope as far as throughput goes, by adding matrix multiply units (MMU),
+which are physically connected to each other.
+2. These MMUs are meant to avoid to memory access during a chain of tensor product operations.
+This is accomplished by a <a href="https://en.wikipedia.org/wiki/Systolic_array">
+systolic array architecture</a>.
+
+{% highlight markdown %}
+TPU are heavily optimized for ONLY deep learning tasks/operations, at the cost 
+of flexibility of performing other tasks. 
+{% endhighlight %}
+
+![]({{site.baseurl}}/img/mult_add_tpu_2.gif)
+<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
