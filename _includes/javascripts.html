@@ -10,6 +10,13 @@
   noResultsText: '<li class="search-no-item">No results found</li>'
   });
 </script>
+
+{% if page.usemathjax %}
+<script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% endif %}
+
 <script src="{{ site.baseurl }}/js/instafeed.min.js"></script>
 <script src="{{ site.baseurl }}/js/jquery.waitforimages.min.js"></script>
 <script src="{{ site.baseurl }}/js/jquery.fitvids.js"></script>
