@@ -12,7 +12,7 @@ I'm a computer vision research engineer with experience in object detection, seg
 
 ## Experience - Full time
 
-<b>Apple</b> &nbsp; <small> Sr Computer Vision Algorithm Engineer (2018 - Present) </small>
+<b>Apple</b> &nbsp;  Sr Computer Vision Algorithm Engineer (2018 - Present) 
 
 * Automatic Annotation
 * Pose Estimation
@@ -23,7 +23,7 @@ I'm a computer vision research engineer with experience in object detection, seg
 
 <br>
 
-<b>Octi</b> &nbsp; <small> SVP Technology (2017 - 2018) </small>
+<b>Octi</b> &nbsp; SVP Technology (2017 - 2018)
 
 * Human Pose Estimation
 * Action Recognition
@@ -32,7 +32,7 @@ I'm a computer vision research engineer with experience in object detection, seg
 
 <br>
 
-<b>Gumgum</b> &nbsp; <small> Computer Vision Scientist (2016 - 2017) </small>
+<b>Gumgum</b> &nbsp; Computer Vision Scientist (2016 - 2017)
 
 * Object Detection
 * Automatic Annotation
