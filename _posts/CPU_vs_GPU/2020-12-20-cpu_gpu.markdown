@@ -27,11 +27,11 @@ Thoughput
 <p style="text-align:left">Multiply-Add operation on CPU. Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
 ">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a></p>
 <br>
-1. CPUs are meant to be the most flexible piece of hardware, capable of running every software, 
+* CPUs are meant to be the most flexible piece of hardware, capable of running every software, 
 instruction by instruction
-2. CPUs are not designed to only render graphics or multiply tensors, they need to load
+* CPUs are not designed to only render graphics or multiply tensors, they need to load
 databases, a variety of applications and run multiple threads where each thread is running a different instruction set.
-3. To accomplish this, CPUs read instruction <i>one by one</i> from the memory, perform any 
+* To accomplish this, CPUs read instruction <i>one by one</i> from the memory, perform any 
 computation if needed, and write the result back into memory. 
 
 {% highlight markdown %}
@@ -43,9 +43,9 @@ CPUs optimize for latency over throughput
 <p style="text-align:left">Multiply-Add operation on GPU. Credits: <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
 ">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> </p>
 <br>
-1. GPUs are designed to process a single instruction <i> simultaneously </i> over a large 
+* GPUs are designed to process a single instruction <i> simultaneously </i> over a large 
 number of cuda cores. 
-2. Though the cores have lower <a href='https://techterms.com/definition/clockspeed#:~:text=Clock%20speed%20is%20the%20rate,one%20billion%20cycles%20per%20second.'>
+* Though the cores have lower <a href='https://techterms.com/definition/clockspeed#:~:text=Clock%20speed%20is%20the%20rate,one%20billion%20cycles%20per%20second.'>
 clock speed </a>, the sheer number of cuda cores is enough to crush CPU when it comes to tasks 
 like training deep learning models
 
@@ -58,15 +58,15 @@ But they are still general enough and support most of computations possible on a
 ![]({{site.baseurl}}/img/mult_add_tpu.gif)
 <p style="text-align:left">Model weights beings loaded into the physical array. Credits: <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
 ">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a></p>
-<br>
-1. TPUs pushes the envelope as far as throughput goes, by adding matrix multiply units (MMU),
+
+* TPUs pushes the envelope as far as throughput goes, by adding matrix multiply units (MMU),
 which are physically connected to each other.
 
 ![]({{site.baseurl}}/img/mult_add_tpu_2.gif)
 <p style="text-align:left">Data loading and Multiply-Add operation on TPU. Credit: <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
 ">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> </p>
-<br>
-2. These MMUs are meant to avoid to memory access during a chain of tensor product operations.
+
+* These MMUs are meant to avoid to memory access during a chain of tensor product operations.
 This is accomplished by a <a href="https://en.wikipedia.org/wiki/Systolic_array">
 systolic array architecture</a>.
 
