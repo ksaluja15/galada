@@ -24,9 +24,9 @@ Thoughput
 ## CPU
 
 ![]({{site.baseurl}}/img/mult_add_cpu.gif)
-<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
-">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
-
+<p style="text-align:left">Multiply-Add operation on CPU. Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a></p>
+<br>
 1. CPUs are meant to be the most flexible piece of hardware, capable of running every software, 
 instruction by instruction
 2. CPUs are not designed to only render graphics or multiply tensors, they need to load
@@ -40,9 +40,9 @@ CPUs optimize for latency over throughput
 
 ## GPU
 ![]({{site.baseurl}}/img/mult-add-gpu.gif)
-<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
-">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
-
+<p style="text-align:left">Multiply-Add operation on GPU. Credits: <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> </p>
+<br>
 1. GPUs are designed to process a single instruction <i> simultaneously </i> over a large 
 number of cuda cores. 
 2. Though the cores have lower <a href='https://techterms.com/definition/clockspeed#:~:text=Clock%20speed%20is%20the%20rate,one%20billion%20cycles%20per%20second.'>
@@ -56,20 +56,22 @@ But they are still general enough and support most of computations possible on a
 
 ## TPU
 ![]({{site.baseurl}}/img/mult_add_tpu.gif)
-<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
-">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
-
+<p style="text-align:left">Model weights beings loaded into the physical array. Credits: <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a></p>
+<br>
 1. TPUs pushes the envelope as far as throughput goes, by adding matrix multiply units (MMU),
 which are physically connected to each other.
+
+![]({{site.baseurl}}/img/mult_add_tpu_2.gif)
+<p style="text-align:left">Data loading and Multiply-Add operation on TPU. Credit: <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
+">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> </p>
+<br>
 2. These MMUs are meant to avoid to memory access during a chain of tensor product operations.
 This is accomplished by a <a href="https://en.wikipedia.org/wiki/Systolic_array">
 systolic array architecture</a>.
 
 {% highlight markdown %}
-TPU are heavily optimized for ONLY deep learning tasks/operations, at the cost 
-of flexibility of performing other tasks. 
+TPU are heavily optimized for ONLY deep learning tasks/operations, while 
+compromising on the flexibility needed to perform other tasks.
 {% endhighlight %}
 
-![]({{site.baseurl}}/img/mult_add_tpu_2.gif)
-<p style="text-align:center">Credits to <a href="https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning
-">Google</a> and <a href="https://www.birdman.ne.jp/">BIRDMAN</a> for this animation</p>
