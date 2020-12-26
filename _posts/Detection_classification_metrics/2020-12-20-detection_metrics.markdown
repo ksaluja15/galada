@@ -46,12 +46,10 @@ Average Precision is the area under the Precision - Recall curve.
 {% endhighlight %}
 $$ AP = \int_0^1 P(r) \,dr$$
 
-Here is an example of a PR curve
-
 ![]({{site.baseurl}}/img/pr.png)
 
 We can use the standard sklearn package to compute the AUC (area under the curve), 
-or we can use other approximations to compute the area.
+or we can approximate the area, as shown in the figure above.
 
 Mean Average Precision (mAP) is the mean of AP for all classes.
 
