@@ -3,7 +3,7 @@ layout: post
 title:  EfficientNet - A smart heuristic 
 date:   2020-12-29 16:03:00 +0300
 image:  06.jpg
-tags:   cpu gpu tpu latency throughput
+tags:   efficientNet flop CNN resnet mobilenet
 usemathjax: true
 ---
 
@@ -13,6 +13,9 @@ relating resolution, width, and depth of a CNN. In particular, it tries to
 answer two key questions:
 * What should be the best base network
 * How to scale the base network(a) in an efficient manner
+
+EfficientNet enables us to effectively control the compute used(FLOPs) by a network Vs accuracy.
+Moreover, it allows for fast inference on embedded devices.
 
 ## Finding the best base network
 
