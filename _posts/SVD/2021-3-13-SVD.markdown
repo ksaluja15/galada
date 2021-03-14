@@ -1,0 +1,92 @@
+---
+layout: post
+title:  SVD - Proof and Applications
+date:   2021-3-13 16:03:00 +0300
+image:  svd_cover.png
+tags:   singular decomposition eigen compression
+usemathjax: true
+---
+
+SVD (Singular Value Decomposition) is one of my favorite topics in linear algebra.
+It's almost magical to factorize any matrix into a product of two orthogonal matrices and a diagonal matrix.
+
+## Proof of Existence
+
+Here is a proof the existence of SVD in my poor handwriting :p
+
+<object data="{{site.baseurl}}/img/SVD.pdf" width="1000" height="1000" type='application/pdf'></object>
+<br>
+
+In other words, A can be decomposed into a product of U, &sum; and V , where &sum; contains the singular values along it's
+diagonal, and U & V are unitary matrices.
+
+# Applications
+
+1. Image compression
+2. Low rank approximations
+3. PCA 
+4. Rank determination
+5. Least squares
+
+and a million more...
+
+Let's look at one such application in computer vision:
+
+## Image Compression
+
+What if we delete small singular values from &sum; and its corresponding vectors from U and V ? We can then obtain the 
+projection of A onto a lower dimensional subspace. This technique can be used to compress an image at the loss of
+some high frequency information.
+
+Using this code, we can reconstruct the image using the first N components 
+{% highlight markdown %}
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+
+img = Image.open('tiger.png')
+img = np.array(img)
+gray = 0.2989 * img[:, :, 0] + 0.5870 * img[:, :, 1] + 0.1140 * img[:, :, 2]
+
+U,s,V = np.linalg.svd(gray)
+
+recon_imgs=[]
+for n in [5, 15, 30]:
+    S = np.zeros(np.shape(gray))
+    for i in range(0, n):
+        S[i,i] = s[i]
+    recon_img = U @ S @ V
+    recon_imgs.append(recon_img)
+
+
+fig, ax = plt.subplots(2, 2)
+
+ax[0][0].imshow(gray, cmap='gray')
+ax[0][0].axis('off')
+ax[0][0].set_title('Original')
+
+ax[0][1].imshow(recon_imgs[0], cmap='gray')
+ax[0][1].axis('off')
+ax[0][1].set_title(f'Reconstructed n = 5')
+
+ax[1][0].imshow(recon_imgs[1], cmap='gray')
+ax[1][0].axis('off')
+ax[1][0].set_title(f'Reconstructed n = 15')
+
+ax[1][1].imshow(recon_imgs[2], cmap='gray')
+ax[1][1].axis('off')
+ax[1][1].set_title(f'Reconstructed n = 30')
+plt.show()
+
+{% endhighlight %}
+
+There are 942 singular values for the original image, since it's a (942x942) image with unique pixel rows.
+![]({{site.baseurl}}/img/svd_tiger_res.png)
+
+We can recover most of the low frequency information from the image using only the first 15-30 components of SVD. Even
+finer details like eye balls are present in the reconstructed image, with a compression rate ~ 2000-4000.
+
+## References
+
+1. <a href="https://towardsdatascience.com/svd-8c2f72e264f">You Don’t Know SVD (Singular Value Decomposition) </a> by Hussein Abdullatif
+2. <a href="https://www.cs.princeton.edu/courses/archive/spring12/cos598C/svdchapter.pdf"> SVD @ Princeton </a>
