@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
-image: 06.jpg
+image: contact_me.png
 ---
 <p style="text-align: center">
 For further queries, email me at <a href="mailto:kunalsaluja15@gmail.com" class="menu-link">kunalsaluja15@gmail.com</a>.

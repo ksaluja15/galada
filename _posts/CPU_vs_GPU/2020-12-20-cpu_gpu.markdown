@@ -2,7 +2,7 @@
 layout: post
 title:  CPU vs GPU vs TPU 
 date:   2020-12-24 16:03:00 +0300
-image:  02.jpg
+image:  cpu_cov.png
 tags:   cpu gpu tpu latency throughput
 ---
 

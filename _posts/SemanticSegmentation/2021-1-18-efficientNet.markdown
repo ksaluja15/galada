@@ -2,7 +2,7 @@
 layout: post
 title:  Semantic Segmentation - DeepLab V3+ 
 date:   2021-01-23 16:03:00 +0300
-image:  dark_city.jpg
+image:  seg_cov.png
 tags:   segmentation deeplab xception aspp depthwise separable encoder decoder
 usemathjax: true
 ---

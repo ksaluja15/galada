@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  SVD - Proof and Applications
+title:  SVD - Derivation and Applications
 date:   2021-3-13 16:03:00 +0300
-image:  svd_cover.png
+image:  svd_cov.png
 tags:   singular decomposition eigen compression
 usemathjax: true
 ---
@@ -10,7 +10,7 @@ usemathjax: true
 SVD (Singular Value Decomposition) is one of my favorite topics in linear algebra.
 It's almost magical to factorize any matrix into a product of two orthogonal matrices and a diagonal matrix.
 
-## Proof of Existence
+## Derivation
 
 Here is a proof the existence of SVD in my poor handwriting :p
 

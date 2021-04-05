@@ -2,7 +2,7 @@
 layout: post
 title:  EfficientNet - A smart heuristic 
 date:   2020-12-29 16:03:00 +0300
-image:  06.jpg
+image:  eff_cov.png
 tags:   efficientNet flop CNN resnet mobilenet
 usemathjax: true
 ---
