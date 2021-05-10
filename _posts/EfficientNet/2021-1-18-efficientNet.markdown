@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  EfficientNet - A smart heuristic 
-date:   2020-12-29 16:03:00 +0300
-image:  eff_cov.png
+title:  EfficientNet (V1 & V2) - A smart heuristic
+date:   2021-05-09 16:03:00 +0300
+image:  eff.png
 tags:   efficientNet flop CNN resnet mobilenet
 usemathjax: true
 ---
@@ -43,6 +43,15 @@ scale the resolution, width and depth of the network by the above mentioned mult
 we will use twice as much compute compared to the base case when the multiples are 1 each.
 If we apply this approach in an incremental fashion, we will obtain optimized architectures which give high
 accuracy at the specified target flops.
+
+## UPDATE: EfficientNet V2
+
+Some changes proposed in the latest architecture and methodology:
+* Combination of Fused-MBConv and MB Conv instead of only MbConv
+* Training-aware NAS - jointly optimizes for accuracy, parameter efficiency and training speed this time.
+* Progressive Learning - Low regularization + small images initially during training, followed by high regularization
++ large images later
+* Small architecture changes.
 
 ## Results
 
